@@ -79,7 +79,7 @@ public class LotteryMenu {
     }
 
     public void deleteObject() {
-        System.out.println("삭제 대상 이름:  ");
+        System.out.println("삭제 대상 이름: ");
         String name = scanner.nextLine();
 
         System.out.println("삭제 대상의 핸드폰 번호:  ");
