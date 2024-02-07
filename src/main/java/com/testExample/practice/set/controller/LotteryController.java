@@ -1,32 +1,43 @@
 package com.testExample.practice.set.controller;
 
 import com.testExample.practice.set.model.vo.Lottery;
+import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class LotteryController {
 
-    private Set<Lottery> lotterySet;
+
+    @Getter
     private Set<Lottery> winners;
 
+    private HashSet loterry = new HashSet<>();
+    private HashSet win = new HashSet<>();
+
     public LotteryController() {
-        this.lotterySet = new HashSet<>();
-    }
-    public boolean insertObject(Lottery entry) {
-        if (lotterySet.contains(entry)) {
-            return false;
-        } else {
-            lotterySet.add(entry);
-            return true;
-        }
+        this.loterry = new HashSet<>();
 
     }
-
-    public boolean deleteObject(Lottery entry){
-        return lotterySet.remove(entry);
+    public boolean insertObject(Lottery l) {
+        return loterry.add(l);
     }
-    public boolean winObject(Lottery entry) {
-        return winners.add(entry);
+
+    public boolean deleteObject(Lottery l){
+        return loterry.remove(l);
+    }
+    public boolean winObject(Lottery l) {
+        ArrayList winArray = new ArrayList<>();
+        winArray.add(loterry);
+        return loterry.add(l);
+    }
+    public TreeSet getSortedWinners() {
+        return null;
+    }
+
+    public boolean searchWinner() {
+        return true;
     }
 }

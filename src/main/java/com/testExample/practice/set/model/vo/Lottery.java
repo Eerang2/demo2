@@ -6,12 +6,14 @@ public class Lottery {
 
     private String name;
     private String phone;
-    private String winner;
 
-    public Lottery(String name, String phone, String winner) {
+    public Lottery(String name, String phone) {
         this.name = name;
         this.phone = phone;
-        this.winner = winner;
+
+    }
+
+    public Lottery() {
     }
 
     public String getName() {
@@ -25,6 +27,7 @@ public class Lottery {
     public String getPhone() {
         return phone;
     }
+
 
     public void setPhone(String phone) {
         this.phone = phone;
