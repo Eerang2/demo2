@@ -97,30 +97,15 @@ public class LotteryMenu {
     }
 
     public void winObject() {
-        Set<Lottery> winners = lotteryController.getWinners();
-        if (winners.isEmpty()) {
+        if (lotteryController.winObject() == null) {
             System.out.println("대상 없음");
         } else {
-            System.out.println("대상 확인");
-            for (Lottery winner : winners) {
-                System.out.println("이름: " + winner.getName() + "폰번호: " + winner.getPhone());
-            }
+            System.out.println(lotteryController.winObject());
         }
     }
 
     public void sortedWinObject() {
-        Set<Lottery> sortedWinners = lotteryController.getSortedWinners();
-
-        if (sortedWinners.isEmpty()) {
-            System.out.println("당첨 대상이 없습니다.");
-        } else {
-            System.out.println("정렬된 당첨 대상 확인:");
-            Iterator<Lottery> iterator = sortedWinners.iterator();
-            while (iterator.hasNext()) {
-                Lottery winner = iterator.next();
-                System.out.println("이름: " + winner.getName() + ", 핸드폰 번호: " + winner.getPhone());
-            }
-        }
+        return;
     }
 
     public void searchWinner() {

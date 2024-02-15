@@ -3,10 +3,7 @@ package com.testExample.practice.set.controller;
 import com.testExample.practice.set.model.vo.Lottery;
 import lombok.Getter;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class LotteryController {
 
@@ -28,16 +25,29 @@ public class LotteryController {
     public boolean deleteObject(Lottery l){
         return loterry.remove(l);
     }
-    public boolean winObject(Lottery l) {
+    public HashSet winObject() {
         ArrayList winArray = new ArrayList<>();
-        winArray.add(loterry);
-        return loterry.add(l);
+        Iterator iterator = loterry.iterator();
+        while (iterator.hasNext()) {
+
+            winArray.add(loterry);
+        }
+        Collections.shuffle(winArray);
+        if (winArray.size() < 4) {
+            win = null;
+        } else {
+            for (int i = 0; i < 4; i++) {
+                win.add(winArray.get(i));
+            }
+        }
+        return win;
     }
+
     public TreeSet getSortedWinners() {
         return null;
     }
 
-    public boolean searchWinner() {
-        return true;
+    public boolean searchWinner(Lottery l) {
+        return win.contains(l);
     }
 }
